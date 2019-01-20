@@ -1,0 +1,21 @@
+<h1>INVENTORY</h1>
+
+<table>
+  <thead>
+    <th>Brand</th>
+    <th>Category</th>
+    <th>Price</th>
+  </thead>
+  <% @goods.each do | good | %>
+  <tr>
+     <td><%= good.brand %></td>
+     <td><%= good.category %></td>
+     <td><%= good.price %></td>
+     <td>
+       <%= link_to "Create", new_good_path%>
+       <%= link_to "Edit", edit_good_path(good) %>
+       <%= link_to "Delete", good, method: :delete, data: {confirm: "Do you really want to delete this product"} %>
+     </td>
+  </tr>
+  <% end %>
+</table>
